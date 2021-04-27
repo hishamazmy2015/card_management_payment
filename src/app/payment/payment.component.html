@@ -54,7 +54,7 @@
                 formControlName="cardHolderFirstName"
                 placeholder="First Name"
             />
-            <div class="remove" *ngIf="gfc.cardHolderFirstName.errors.required">
+            <div class="remove" *ngIf="gfc.cardHolderFirstName.errors.required && gfc.cardHolderFirstName.errors.touched">
                 Field is required !
             </div>  
             </div>
@@ -66,7 +66,7 @@
                 value=""
                 placeholder="Card Number"
             />
-            <div class="remove" *ngIf="gfc.cardnumber.errors.required">
+            <div class="remove" *ngIf="gfc.cardnumber.errors.required && gfc.cardnumber.errors.touched">
                 Field is required !
             </div>  
             </div>
@@ -81,7 +81,7 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 />
-                <div class="remove" *ngIf="gfc.cardExpYear.errors.required">
+                <div class="remove" *ngIf="gfc.cardExpYear.errors.required  && gfc.cardExpYear.errors.touched">
                 Field is required !
                 </div>  
             
@@ -94,7 +94,7 @@
                 value=""
                 placeholder="CVV"
                 />
-                <div class="remove" *ngIf="gfc.cardcvv.errors.required">
+                <div class="remove" *ngIf="gfc.cardcvv.errors.required && gfc.cardcvv.errors.touched">
                     Field is required !
                 </div>  
             </div>

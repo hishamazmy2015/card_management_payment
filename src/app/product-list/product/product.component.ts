@@ -7,12 +7,16 @@ import CommonService from "src/common.service";
   styleUrls: ["./product.component.css"],
 })
 export class ProductComponent implements OnInit {
+
+  
   constructor(private commonService: CommonService) {}
-  products = this.commonService.products;
+  @Input() products
 
-  ngOnInit() {}
+  ngOnInit() {
+  this.products = this.commonService.products;
+
+  }
   addToCart(prd) {
-
     this.commonService.addItemToTheCart(prd);
   }
 }

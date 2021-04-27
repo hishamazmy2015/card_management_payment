@@ -12,7 +12,9 @@ import CommonService from "src/common.service";
 export class PaymentComponent implements OnInit {
   CardInfoForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private commonService:CommonService) {
+  constructor(private fb: FormBuilder, private commonService: CommonService) {}
+
+  ngOnInit() {
     this.CardInfoForm = this.fb.group({
       title: [null],
       cardHolderFirstName: [null, Validators.required],
@@ -26,12 +28,10 @@ export class PaymentComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
-
   saveCardInfo() {}
-  calculateTotalPrice(){
-    const price = this.commonService.calculateTotalPrice()
-    console.log(price)
-    return price
+  calculateTotalPrice() {
+    const price = this.commonService.calculateTotalPrice();
+    console.log(price);
+    return price;
   }
 }

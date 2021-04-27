@@ -10,7 +10,7 @@ import CommonService from "src/common.service";
 export class CartComponent implements OnInit {
   carts = [];
 
-  constructor(private commonService: CommonService,private route:Router) {}
+  constructor(private commonService: CommonService, private route: Router) {}
 
   ngOnInit() {
     this.carts = this.commonService.getCart();
@@ -18,17 +18,23 @@ export class CartComponent implements OnInit {
   }
 
   removeFromTheCart(productId) {
-    this.commonService.removeItemFromTheCart(productId)
-    const indexToBeRemoved = this.carts.findIndex(
-      (prd) => prd.id === product.id
-    );
-    if (indexToBeRemoved) this.carts.splice(indexToBeRemoved, 1);
+    this.commonService.removeItemFromTheCart(productId);
   }
 
+  checkoutPage() {
+    this.route.navigate(["/payment"]);
+  }
 
-  checkoutPage(){
-    this.route.navigate()
+  increaseCountPerProduct(productId:number){
+    this.commonService.increaseCountPerProductSer(productId);
 
   }
 
+  decreaseCountPerProduct(productId:number){
+    this.commonService.decreaseCountPerProductSer(productId);
+    this.carts = this.commonService.getCart();
+    
+
+  }
+  
 }

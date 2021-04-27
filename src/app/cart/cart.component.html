@@ -18,9 +18,9 @@
             </div>
             <div class="d-flex flex-row align-items-center">
                 
-                <a title="Add number of items" (click)="increaseCountPerProduct(i, product.count)">+</a> 
+                <a class="action-btns add" title="Add number of items" (click)="increaseCountPerProduct(i, product.count)">+</a> 
                 <span class="d-block">{{product.count}}</span>
-                <a title="remove number of items" (click)="decreaseCountPerProduct(i,product.count)">-</a>
+                <a class="action-btns minus" title="remove number of items" (click)="decreaseCountPerProduct(i,product.count)">-</a>
                 
       <ng-container *ngIf="product.count > 0">
                 
@@ -42,7 +42,7 @@
                     <div class="d-flex flex-row align-items-center"><span class="d-block">1</span><span class="d-block ml-5 font-weight-bold">$999</span><i class="fa fa-trash-o ml-3 text-black-50"></i></div>
                 </div> -->
                 
-                <button value="remove" (click)="removeFromTheCart(i)" class="remove"> remove </button>
+                <button value="remove" (click)="removeFromTheCart(i)" class="remove"> Remove </button>
             </div>
       <h3>Total Price: <span>{{calculateTotalPrice()}}</span></h3>
 

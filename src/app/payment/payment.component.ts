@@ -14,6 +14,10 @@ export class PaymentComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private commonService: CommonService) {}
 
+  get gfc() {
+    return this.CardInfoForm.controls;
+  }
+
   ngOnInit() {
     this.CardInfoForm = this.fb.group({
       title: [null],

@@ -7,10 +7,13 @@ import CommonService from "src/common.service";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent implements OnInit {
-  @Input() cartProductCount: number = 0;
+   cartProductCount: number = 0;
   constructor(private commonService: CommonService) {}
 
   ngOnInit() {
-    this.cartProductCount = this.commonService.getCart().length;
+  }
+  cartLength(){
+    return this.commonService.getCartLength()
+
   }
 }

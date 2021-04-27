@@ -17,23 +17,28 @@ export default class CommonService {
     });
   }
 
+  getCartLength() {
+    return this.products.filter((product) => {
+      return product.inCart === true;
+    }).length;
+  }
+
   addItemToTheCart(productId: number) {
     this.products.map((item, index) => {
       if (item.id === productId) {
         this.products[index].inCart = true;
         this.products[index].count = 1;
-            this.carts.push(this.products[index]);
+        this.carts.push(this.products[index]);
       }
     });
   }
 
-  calculateTotalPrice(){
+  calculateTotalPrice() {
     let totalPrice = 0;
-    this.products.forEach(data=>{
-        if(data.inCart)
-         totalPrice += data.price * data.count
-    })
-    return totalPrice
+    this.products.forEach((data) => {
+      if (data.inCart) totalPrice += data.price * data.count;
+    });
+    return totalPrice;
   }
 
   removeItemFromTheCart(productId) {
@@ -45,24 +50,9 @@ export default class CommonService {
       }
       console.log("After delete", this.products[index].inCart);
     });
-    // this.products.map((item, index) => {
-    //   if (item.id === productId) {
-    //     this.products[index].inCart = false;
-    //     this.carts.splice(indexToBeRemoved, 1)
-    //     this.carts.push(this.products[index]);
-    //   }
-    // });
-
-    //     const indexToBeRemoved = this.carts.findIndex(
-    //       (prd) => prd.id === product.id
-    //     );
-    //     if (indexToBeRemoved) this.carts.splice(indexToBeRemoved, 1);
-    //   }
   }
-  // Remove all the items added to the cart
   emptryCart() {
     this.carts.length = 0;
-    // this.products.next(this.cartItems);
   }
 
   // Calculate total price on item added to the cart

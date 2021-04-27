@@ -29,6 +29,7 @@ export const storeProducts = [
       id: 3,
       title: "Vivo V5",
       img: "https://rukminim1.flixcart.com/image/832/832/jefzonk0/television/r/a/f/mi-l43m5-ai-original-imaf34hgjzc4xr62.jpeg?q=70",
+
       price: 12999,
       company: "VIVO",
       info:
@@ -40,7 +41,9 @@ export const storeProducts = [
     {
       id: 4,
       title: "Vivo X20",
-      img: "images/vivo X20.jpg",
+    //   img: "images/vivo X20.jpg",
+      img: "https://rukminim1.flixcart.com/image/832/832/jefzonk0/television/r/a/f/mi-l43m5-ai-original-imaf34hgjzc4xr62.jpeg?q=70",
+
       price: 25000,
       company: "VIVO",
       info:
@@ -52,7 +55,9 @@ export const storeProducts = [
     {
       id: 5,
       title: "Vivo Y91",
-      img: "images/vivo Y91.jpeg",
+    //   img: "images/vivo Y91.jpeg",
+    img: "https://rukminim1.flixcart.com/image/832/832/jefzonk0/television/r/a/f/mi-l43m5-ai-original-imaf34hgjzc4xr62.jpeg?q=70",
+
       price: 16899,
       company: "VIVO",
       info:
@@ -64,7 +69,9 @@ export const storeProducts = [
     {
       id: 6,
       title: "Ikall k71",
-      img: "images/Ikall k71.jpg",
+    //   img: "images/Ikall k71.jpg",
+    img: "https://rukminim1.flixcart.com/image/832/832/jefzonk0/television/r/a/f/mi-l43m5-ai-original-imaf34hgjzc4xr62.jpeg?q=70",
+
       price: 1500,
       company: "Ikall",
       info:
@@ -76,7 +83,9 @@ export const storeProducts = [
     {
       id: 7,
       title: "Vivo Apex",
-      img: "images/vivo-apex.png",
+    //   img: "images/vivo-apex.png",
+    img: "https://rukminim1.flixcart.com/image/832/832/jefzonk0/television/r/a/f/mi-l43m5-ai-original-imaf34hgjzc4xr62.jpeg?q=70",
+
       price: 29999,
       company: "VIVO",
       info:
@@ -88,7 +97,9 @@ export const storeProducts = [
     {
       id: 8,
       title: "Vivo V11",
-      img: "images/vivo-v11.jpg",
+    //   img: "images/vivo-v11.jpg",
+    img: "https://rukminim1.flixcart.com/image/832/832/jefzonk0/television/r/a/f/mi-l43m5-ai-original-imaf34hgjzc4xr62.jpeg?q=70",
+
       price: 14999,
       company: "VIVO",
       info:

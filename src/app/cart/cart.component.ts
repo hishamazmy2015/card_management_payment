@@ -19,6 +19,8 @@ export class CartComponent implements OnInit {
 
   removeFromTheCart(productId) {
     this.commonService.removeItemFromTheCart(productId);
+    this.carts=this.commonService.getCart();
+
   }
 
   checkoutPage() {

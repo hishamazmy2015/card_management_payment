@@ -27,11 +27,14 @@ export default class CommonService {
   }
 
   removeItemFromTheCart(productId) {
+      console.log("After delete");
     this.products.map((item, index) => {
       if (item.id === productId) {
         this.products[index].inCart = false;
         this.carts.splice(index, 1);
       }
+      console.log("After delete",this.products[index].inCart);
+
     });
     // this.products.map((item, index) => {
     //   if (item.id === productId) {

@@ -1,0 +1,36 @@
+<div class="container mt-5 p-3 rounded cart">
+    <div class="row no-gutters">
+        <div class="col-md-8">
+            <div class="product-details mr-2">
+                <div class="d-flex flex-row align-items-center"><i class="fa fa-long-arrow-left"></i><span class="ml-2">Continue Shopping</span></div>
+                <hr>
+                <h6 class="mb-0">Shopping cart</h6>
+                <div class="d-flex justify-content-between"><span>You have 4 items in your cart</span>
+                    <div class="d-flex flex-row align-items-center"><span class="text-black-50">Sort by:</span>
+                        <div class="price ml-2"><span class="mr-1">price</span><i class="fa fa-angle-down"></i></div>
+                    </div>
+                </div>
+
+
+                <div  class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded"  *ngFor="let product of carts;let i=index">
+                
+
+                        <div class="d-flex flex-row"><img class="rounded" src="{{product.img}}" width="40">
+                            <div class="ml-2"><span class="font-weight-bold d-block">{{product.title}}</span><span class="spec">256GB, Navy Blue</span></div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center"><span class="d-block">2</span><span class="d-block ml-5 font-weight-bold">{{product.price}}</span><i class="fa fa-trash-o ml-3 text-black-50"></i></div>
+                 </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
+                    <div class="d-flex flex-row"><img class="rounded" src="https://i.imgur.com/Tja5H1c.jpg" width="40">
+                        <div class="ml-2"><span class="font-weight-bold d-block">Samsung galaxy Note 10&nbsp;</span><span class="spec">256GB, Navy Blue</span></div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center"><span class="d-block">1</span><span class="d-block ml-5 font-weight-bold">$999</span><i class="fa fa-trash-o ml-3 text-black-50"></i></div>
+                </div>
+                
+            </div>
+            <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" (click)="checkoutPage()" type="button">Proceed to Pay</button></div>
+        </div>
+ 
+    </div>
+</div>

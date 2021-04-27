@@ -180,3 +180,12 @@ a:hover {
     background-position-x: 95%;
     background-position-y: center
 }
+
+.remove {
+    box-shadow: none;
+    border: none;
+    background: none;
+    color: red;
+    font-weight: bold;
+    font-size: 13px;
+}

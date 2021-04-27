@@ -1,8 +1,12 @@
-<div class="card" style="width: 18rem;" *ngFor="let product of products;let i=index">
-    <img class="card-img-top" src="{{product.img}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{product.title}}</h5>
-      <p class="card-text">{{product.info}}</p>
-      <a href="#" class="btn btn-primary" (click)="addToCart(product.id)">{{product.incart ? 'InCart':'Add to cart'}}</a>
+<div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let product of products;let i=index">
+        <div class="card h-100" style="width: 18rem;">
+            <img class="card-img-top" src="{{product.img}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">{{product.info}}</p>
+              <a href="#" class="btn btn-primary" (click)="addToCart(product.id)">{{product.incart ? 'InCart':'Add to cart'}}</a>
+            </div>
+          </div>
     </div>
-  </div>
+</div>

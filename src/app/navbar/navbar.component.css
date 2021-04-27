@@ -1,0 +1,32 @@
+.navbar-collapse {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cart-count svg {
+    max-width: 24px;
+}
+
+.cart-count svg path {
+    fill: #929292;
+}
+
+.cart-count {
+    position: relative;
+    padding-top: 6px;
+}
+
+.cart-count em {
+    background: rgb(0 0 0 / 82%);
+    width: 18px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    color: #fff;
+    height: 19px;
+    text-align: center;
+}

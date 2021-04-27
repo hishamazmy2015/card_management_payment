@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { Validators } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 import { FormGroup } from "@angular/forms";
+import CommonService from "src/common.service";
 
 @Component({
   selector: "app-payment",
@@ -9,12 +12,26 @@ import { FormGroup } from "@angular/forms";
 export class PaymentComponent implements OnInit {
   CardInfoForm: FormGroup;
 
-  constructor() {}
+  constructor(private fb: FormBuilder, private commonService:CommonService) {
+    this.CardInfoForm = this.fb.group({
+      title: [null],
+      cardHolderFirstName: [null, Validators.required],
+      cardHolderLastName: [null, Validators.required],
+      cardHolderType: [null, Validators.required],
+      cardType: [null, Validators.required],
+      cardnumber: [null, [Validators.required]],
+      cardExpMonth: [null, Validators.required],
+      cardExpYear: [null, Validators.required],
+      cardcvv: [null, Validators.required],
+    });
+  }
 
   ngOnInit() {}
 
-
-  saveCardInfo(){
-    
+  saveCardInfo() {}
+  calculateTotalPrice(){
+    const price = this.commonService.calculateTotalPrice()
+    console.log(price)
+    return price
   }
 }

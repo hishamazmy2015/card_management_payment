@@ -21,20 +21,29 @@ export default class CommonService {
     this.products.map((item, index) => {
       if (item.id === productId) {
         this.products[index].inCart = true;
-        this.carts.push(this.products[index]);
+        this.products[index].count = 1;
+            this.carts.push(this.products[index]);
       }
     });
   }
 
+  calculateTotalPrice(){
+    let totalPrice = 0;
+    this.products.forEach(data=>{
+        if(data.inCart)
+         totalPrice += data.price * data.count
+    })
+    return totalPrice
+  }
+
   removeItemFromTheCart(productId) {
-      console.log("After delete");
+    console.log("After delete");
     this.products.map((item, index) => {
       if (item.id === productId) {
         this.products[index].inCart = false;
         this.carts.splice(index, 1);
       }
-      console.log("After delete",this.products[index].inCart);
-
+      console.log("After delete", this.products[index].inCart);
     });
     // this.products.map((item, index) => {
     //   if (item.id === productId) {

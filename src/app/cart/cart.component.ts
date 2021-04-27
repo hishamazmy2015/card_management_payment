@@ -17,8 +17,8 @@ export class CartComponent implements OnInit {
     console.log("object carts ", this.carts);
   }
 
-  removeFromTheCart(productId) {
-    this.commonService.removeItemFromTheCart(productId);
+  removeFromTheCart(index) {
+    this.commonService.removeItemFromTheCart(this.carts[index].id);
     this.carts=this.commonService.getCart();
 
   }
@@ -27,16 +27,22 @@ export class CartComponent implements OnInit {
     this.route.navigate(["/payment"]);
   }
 
-  increaseCountPerProduct(productId:number){
-    this.commonService.increaseCountPerProductSer(productId);
+  increaseCountPerProduct(index:number,productCount: number){
+    this.commonService.increaseCountPerProductSer(this.carts[index].id);
 
   }
 
-  decreaseCountPerProduct(productId:number){
-    this.commonService.decreaseCountPerProductSer(productId);
+  decreaseCountPerProduct(index:number,productCount){
+    if(productCount <= 1){
+      this.commonService.removeItemFromTheCart(this.carts[index].id)
+    }
+    this.commonService.decreaseCountPerProductSer(this.carts[index].id);
     this.carts = this.commonService.getCart();
     
 
+  }
+  calculateTotalPrice(){
+    return this.commonService.calculateTotalPrice()
   }
   
 }

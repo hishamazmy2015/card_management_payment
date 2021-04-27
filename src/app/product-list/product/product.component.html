@@ -5,7 +5,7 @@
             <div class="card-body">
               <h5 class="card-title">{{product.title}}</h5>
               <p class="card-text">{{product.info}}</p>
-              <a href="#" class="btn btn-primary" (click)="addToCart(product.id)">{{product.incart ? 'InCart':'Add to cart'}}</a>
+              <button href="#" class="btn btn-primary" [disabled]="product.inCart" (click)="addToCart(product.id)">{{product.inCart ? 'InCart':'Add to cart'}}</button>
             </div>
           </div>
     </div>
